@@ -1,0 +1,18 @@
+def naive_pattern_search(text, pattern):
+    # Get the lengths of text and pattern
+    n = len(text)
+    m = len(pattern)
+    
+    # Loop through the text
+    for i in range(n - m + 1):
+        # Compare substring with pattern
+        for j in range(m):
+            if text[i + j] != pattern[j]:
+                break
+        if j == m - 1:
+            print(f"Pattern found at index {i}")
+
+# Example usage
+text = "this is the text where we want to find the pattern"
+pattern = "pattern"
+naive_pattern_search(text, pattern)
